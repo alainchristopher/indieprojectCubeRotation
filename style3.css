@@ -1,0 +1,161 @@
+@font-face {
+    font-family: Dinamit Bold;
+    src: url(dinamit_bold.ttf);
+}
+@font-face {
+    font-family: Gt Cinetype Mono;
+    src: url(gt-cinetype-mono.otf);
+}
+
+body{
+ background-color:black;  
+ font-family: Dinamit Bold;
+ font-size: 55px; 
+}
+
+.container {
+    /* height: 90vh; */
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .scene {
+    margin-top:-10px;
+    /* width: 300px;
+    height: 300px; */
+    margin: auto auto auto;
+  }
+  
+  .cube {
+    /* position: relative; */
+    width: 300px;
+    height: 300px;
+    transform: perspective(1200px) translateZ(-150px);
+  }
+  
+  .side {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    background-color: black;
+    /* border: 2px solid white; */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 120px 0;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    transform-origin: 50% 50% -150px;
+    backface-visibility: hidden;
+  }
+  .side::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+  }
+  .side span {
+    position: relative;
+  }
+  
+  /* .guides {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 200px;
+    height: 100%;
+    border-style: dotted;
+    border-width: 0 1px;
+    color: rgba(255, 255, 255, 0.6);
+  } */
+  /* .guides::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    border-left: 1px dotted;
+  } */
+  
+  .back {
+    transform: perspective(1200px) rotateX(0deg) rotateY(180deg);
+    animation: back 10s infinite linear;
+  }
+  .top {
+    transform: perspective(1200px) rotateX(90deg);
+    animation: top 10s infinite linear;
+  }
+  .bottom {
+    transform: perspective(1200px) rotateX(-90deg);
+    animation: bottom 10s infinite linear;
+  }
+  .front {
+    transform: perspective(1200px) rotateX(0deg) ;
+    animation: front 10s infinite linear;
+  }
+  
+  /* .back {
+    background-image: url(https://askd.github.io/codepen/back.jpg);
+  }
+  .top {
+    background-image: url(https://askd.github.io/codepen/top.jpg);
+  }
+  .bottom {
+    background-image: url(https://askd.github.io/codepen/bottom.jpg);
+  }
+  .front {
+    background-image: url(https://askd.github.io/codepen/front.jpg);
+  } */
+  
+  @keyframes top {
+      0% { transform:perspective(1200px) rotateX(90deg); }
+    15% { transform: perspective(1200px) rotateX(180deg); }
+      25% { transform: perspective(1200px) rotateX(180deg); }
+      40% { transform: perspective(1200px) rotateX(270deg); }
+      50% { transform: perspective(1200px) rotateX(270deg); }
+      65% { transform: perspective(1200px) rotateX(360deg); }
+      75% { transform: perspective(1200px) rotateX(360deg); }
+      90% { transform: perspective(1200px) rotateX(450deg); }
+      100% { transform:perspective(1200px) rotateX(450deg); }
+  }
+  @keyframes bottom {
+      0% { transform:perspective(1200px)  rotateX(-90deg); }
+    15% { transform: perspective(1200px) rotateX(0deg); }
+      25% { transform: perspective(1200px) rotateX(0deg); }
+      40% { transform: perspective(1200px) rotateX(90deg); }
+      50% { transform: perspective(1200px) rotateX(90deg); }
+      65% { transform: perspective(1200px) rotateX(180deg); }
+      75% { transform: perspective(1200px) rotateX(180deg); }
+      90% { transform: perspective(1200px) rotateX(270deg); }
+      100% { transform:perspective(1200px) rotateX(270deg); }
+  }
+  @keyframes front {
+      0% { transform: perspective(1200px) rotateX(0deg); }
+    15% { transform: perspective(1200px) rotateX(90deg); }
+      25% { transform: perspective(1200px) rotateX(90deg); }
+      40% { transform: perspective(1200px) rotateX(180deg); }
+      50% { transform: perspective(1200px) rotateX(180deg); }
+      65% { transform: perspective(1200px) rotateX(270deg); }
+      75% { transform: perspective(1200px) rotateX(270deg); }
+      90% { transform: perspective(1200px) rotateX(360deg); }
+      100% { transform: perspective(1200px) rotateX(360deg); }
+  }
+  @keyframes back {
+      0% { transform:perspective(1200px) rotateX(0deg) rotateY(180deg) rotateZ(180deg); }
+    15% { transform: perspective(1200px) rotateX(90deg) rotateY(180deg) rotateZ(180deg); }
+      25% { transform: perspective(1200px) rotateX(90deg) rotateY(180deg) rotateZ(180deg); }
+      40% { transform: perspective(1200px) rotateX(180deg) rotateY(180deg) rotateZ(180deg); }
+      50% { transform: perspective(1200px) rotateX(180deg) rotateY(180deg) rotateZ(180deg); }
+      65% { transform: perspective(1200px) rotateX(270deg) rotateY(180deg) rotateZ(180deg); }
+      75% { transform: perspective(1200px) rotateX(270deg) rotateY(180deg) rotateZ(180deg); }
+      90% { transform: perspective(1200px) rotateX(360deg) rotateY(180deg) rotateZ(180deg); }
+      100% { transform:perspective(1200px) rotateX(360deg) rotateY(180deg) rotateZ(180deg); }
+  }
+  
